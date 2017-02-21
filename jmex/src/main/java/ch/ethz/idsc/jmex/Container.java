@@ -4,6 +4,7 @@ package ch.ethz.idsc.jmex;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /** class emulates a struct in MATLAB with an identifier */
 public class Container implements Serializable {
