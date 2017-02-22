@@ -18,6 +18,14 @@ public class DoubleArray implements Serializable {
     this.name = name;
     this.size = size;
     this.value = value;
+    // ---
+    if (0 < size.length) {
+      int numel = 1;
+      for (int val : size)
+        numel *= val;
+      if (numel != value.length)
+        throw new RuntimeException("dimension mismatch " + numel + "!=" + value.length);
+    }
   }
 
   @Override

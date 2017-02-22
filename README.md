@@ -20,15 +20,25 @@ In `MATLAB`, to run the `demoApp` follow these 3 steps:
 
     server = ch.ethz.idsc.jmex.matlab.MfileContainerServer()
 
-## run
+## run [Option 1]
 
-3) call the demo app
+3) in MATLAB call the demo app
 
     demoApp(server)
 
 4) To test the software package, in a console you could now run
 
-    rundemoclient.sh
+    ./rundemoclient.sh
+
+## run [Option 2]
+
+3) in MATLAB call the demo app
+
+    demoMatsimApp(server)
+
+4) To test the software package, in a console you could now run
+
+    ./runmatsimdemo.sh
 
 ## close
 

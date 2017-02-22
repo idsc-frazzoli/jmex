@@ -27,7 +27,7 @@ public class JavaContainerSocket extends ContainerSocket {
   }
 
   @Override
-  public void protected_handle(Container container) {
+  protected void protected_handle(Container container) {
     // do nothing
   }
 }

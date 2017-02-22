@@ -8,8 +8,7 @@ import ch.ethz.idsc.jmex.DoubleArray;
 import ch.ethz.idsc.jmex.java.JavaContainerSocket;
 import ch.ethz.idsc.jmex.matlab.MfileContainerServer;
 
-/** non-public */
-public class JavaContainerSocketDemo {
+public class JavaContainerRandomDemo {
   public static void main(String[] args) {
     try {
       JavaContainerSocket javaContainerSocket = new JavaContainerSocket( //
@@ -17,9 +16,9 @@ public class JavaContainerSocketDemo {
       for (int index = 0; index < 10; ++index) {
         {
           Container container = new Container("MPC" + index);
-          container.list.add(new DoubleArray("sA23t", new int[] { 2, 3 }, new double[6]));
-          container.list.add(new DoubleArray("sB35o", new int[] { 3, 5 }, new double[15]));
-          container.list.add(new DoubleArray("val22", new int[] { 2, 2 }, new double[4]));
+          container.add(new DoubleArray("sA23t", new int[] { 7 }, new double[7]));
+          container.add(new DoubleArray("sB35o", new int[] { 3, 5, 2 }, new double[30]));
+          container.add(new DoubleArray("val22", new int[] { 2, 2 }, new double[] { .1, 2, 3.14, 22 }));
           System.out.println("write " + index);
           javaContainerSocket.writeContainer(container);
         }

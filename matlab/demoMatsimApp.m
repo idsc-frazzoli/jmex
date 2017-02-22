@@ -1,4 +1,4 @@
-function demoApp(server)
+function demoMatsimApp(server)
 % routine is terminated anytime by pressing Ctrl+C
 
 while 1
@@ -13,13 +13,17 @@ while 1
 container = socket.pollContainer();
 [MPC,id] = jmexStruct(container)
 
+MPC.waitCustomersPerVLink'
+MPC.movingVehiclesPerVLink'
+MPC.availableVehiclesPerVNode'
+
 %sol=func(MPC,id) % for instance, solve MPC here
 %[res,id]=jmexStruct(sol)
 
 % write reply to client socket
-sol = ch.ethz.idsc.jmex.Container('someId');
-sol.add(jmexArray('rand',rand(5)))
-sol.add(jmexArray('foob',rand(2,5,3)))
+sol = ch.ethz.idsc.jmex.Container(['sol_' id]);
+sol.add(jmexArray('pickupPerVLink',rand(12,1)))
+sol.add(jmexArray('rebalancePerVLink',rand(25,1)))
 
 socket.writeContainer(sol)
 
