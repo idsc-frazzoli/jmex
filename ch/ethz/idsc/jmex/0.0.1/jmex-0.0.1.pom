@@ -63,7 +63,7 @@
 						<include>**/*</include>
 					</includes>
 					<repositoryName>jmex</repositoryName>      <!-- github repo name -->
-					<repositoryOwner>datahaki</repositoryOwner>    <!-- github username -->
+					<repositoryOwner>idsc-frazzoli</repositoryOwner>    <!-- github username -->
 				</configuration>
 				<executions>
 					<!-- run site-maven-plugin's 'site' target as part of the build's normal 
