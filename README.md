@@ -53,3 +53,28 @@ It is not recommended to start the server from an m.file!
 Instead, the server instance should be accessible from
 the global scope in order to be able to close it properly.
 
+## Include in your project
+
+Modify the `pom` file of your project to specify `repository` and `dependency` of the tensor library:
+
+    <repositories>
+      <repository>
+        <id>tensor-mvn-repo</id>
+        <url>https://raw.github.com/idsc-frazzoli/jmex/mvn-repo/</url>
+        <snapshots>
+          <enabled>true</enabled>
+          <updatePolicy>always</updatePolicy>
+        </snapshots>
+      </repository>
+    </repositories>
+    
+    <dependencies>
+      <dependency>
+        <groupId>ch.ethz.idsc</groupId>
+        <artifactId>jmex</artifactId>
+        <version>0.0.2</version>
+      </dependency>
+    </dependencies>
+
+The source code is attached to the `jar` file for your convenience.
+
