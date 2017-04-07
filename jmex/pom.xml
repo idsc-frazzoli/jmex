@@ -4,7 +4,7 @@
 
 	<groupId>ch.ethz.idsc</groupId>
 	<artifactId>jmex</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>jmex</name>
@@ -44,6 +44,28 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.4</version>
+				<configuration>
+				</configuration>
+			</plugin>
+			
+			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<version>2.8.1</version>
 				<configuration>
@@ -55,15 +77,16 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.11</version>
 				<configuration>
-					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
-					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
-					<branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
+					<message>Maven artifacts for ${project.version}</message>
+					<noJekyll>true</noJekyll>
+					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+					<branch>refs/heads/mvn-repo</branch>
+					<merge>true</merge>
 					<includes>
 						<include>**/*</include>
 					</includes>
-					<repositoryName>jmex</repositoryName>      <!-- github repo name -->
-					<repositoryOwner>idsc-frazzoli</repositoryOwner>    <!-- github username -->
+					<repositoryName>jmex</repositoryName>
+					<repositoryOwner>idsc-frazzoli</repositoryOwner>
 				</configuration>
 				<executions>
 					<!-- run site-maven-plugin's 'site' target as part of the build's normal 
