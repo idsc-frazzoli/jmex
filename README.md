@@ -1,7 +1,8 @@
 # jmex
 
-jmex is a data/struct exchange tool between `MATLAB` and java.
-It was developed to swap vectors and matrices between `MATLAB` and `MATsim`.
+`jmex` is a data/struct exchange tool between `MATLAB` and Java.
+It was developed to swap vectors and matrices between `MATLAB` and `amodeus`.
+`jmex` only uses Java 7 functionality in order to be compatible with common `MATLAB` versions.
 
 The communication is client/server based. `MATLAB` hosts the server.
 
@@ -14,37 +15,37 @@ In `MATLAB`, to run the `demoApp` follow these 3 steps:
 
 1) import the jar file to the classpath using the command
 
-    javaaddpath('jmex-0.0.1.jar')
+    `javaaddpath('jmex-0.0.1.jar')`
 
 2) start a server in MATLAB in the main window
 
-    server = ch.ethz.idsc.jmex.matlab.MfileContainerServer()
+    `server = ch.ethz.idsc.jmex.matlab.MfileContainerServer()`
 
 ## run [Option 1]
 
 3) in MATLAB call the demo app
 
-    demoApp(server)
+    `demoApp(server)`
 
 4) To test the software package, in a console you could now run
 
-    ./rundemoclient.sh
+    `./rundemoclient.sh`
 
 ## run [Option 2]
 
 3) in MATLAB call the demo app
 
-    demoMatsimApp(server)
+    `demoMatsimApp(server)`
 
 4) To test the software package, in a console you could now run
 
-    ./runmatsimdemo.sh
+    `./runmatsimdemo.sh`
 
 ## close
 
 5) The server is closed in `MATLAB` using
 
-    server.close()
+    `server.close()`
 
 
 
